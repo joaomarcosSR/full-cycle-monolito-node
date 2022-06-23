@@ -11,11 +11,9 @@ export default class ProductAdmFacadeFactory {
       productRepository
     );
 
-    const productFacade = new ProductAdmFacadeImpl({
+    return new ProductAdmFacadeImpl({
       addUseCase: addProductUseCase,
       stockUseCase: checkProductStockUseCase,
     });
-
-    return productFacade;
   }
 }

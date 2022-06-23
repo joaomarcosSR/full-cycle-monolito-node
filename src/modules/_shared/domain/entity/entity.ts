@@ -5,12 +5,11 @@ export default class Entity {
   private _createdAt: Date;
   private _updatedAt: Date;
 
-  constructor(id?: Identifier) {
-    this._id = id;
-    this._createdAt = new Date();
-    this._updatedAt = new Date();
+  constructor(id?: Identifier, createdAt?: Date, updatedAt?: Date) {
+    this._id = id || new Identifier();
+    this._createdAt = createdAt || new Date();
+    this._updatedAt = updatedAt || new Date();
   }
-
   get id(): Identifier {
     return this._id;
   }
